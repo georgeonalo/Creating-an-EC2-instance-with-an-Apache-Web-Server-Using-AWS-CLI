@@ -79,7 +79,7 @@ Copy the VPC ID as shown and input in the command to create the security group.
 
 
 ```
-aws ec2 create-security-group --group-name **project-sg** --description **"My security group"** --vpc-id **vpc-05139aa9bdbe91e09**
+aws ec2 create-security-group --group-name project-sg --description "My security group" --vpc-id vpc-05139aa9bdbe91e09
 ```
 
 
