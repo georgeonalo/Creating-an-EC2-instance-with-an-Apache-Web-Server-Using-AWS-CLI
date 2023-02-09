@@ -42,7 +42,7 @@ You will then be prompted to put in your AWS Access Key ID and AWS Secret Access
 Next we will need to create a Key Pair in order to launch an EC2 instance from our AWS CLI. To create a Key Pair enter the following command, replacing the bold text with your own.
 
 ```
-aws ec2 create-key-pair --key-name *ApacheProject* --query 'KeyMaterial' --output text | out-file -encoding ascii -filepath *ApacheProject.pem*
+aws ec2 create-key-pair --key-name ApacheProject --query 'KeyMaterial' --output text | out-file -encoding ascii -filepath ApacheProject.pem
 ```
 
 
@@ -160,7 +160,7 @@ Now to bring it all together, we will finally launch our EC2 instance!
 
 
 ```
-aws ec2 run-instances --image-id **ami-0aa7d40eeae50c9a9** --count 1 --instance-type **t2.micro** --key-name **ApacheProject** --security-group-ids **sg-05abaeef593678b3c** --user-data file://**apache_script.sh**
+aws ec2 run-instances --image-id ami-0aa7d40eeae50c9a9 --count 1 --instance-type t2.micro --key-name ApacheProject --security-group-ids sg-05abaeef593678b3c --user-data file://apache_script.sh
 ```
 
 
